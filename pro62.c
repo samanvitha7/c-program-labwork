@@ -1,7 +1,7 @@
 //reverse an array
 #include<stdio.h>
 int main(){
-	int n,i;
+	int n,i,temp;
 	printf("enter size of array");
 	scanf("%d",&n);
 	int a[n];
@@ -16,15 +16,19 @@ int main(){
 		printf("%d",a[i]);
 	}
 	
-	for(i=0;i<n;i++)
+	for(i=0;i<n/2;i++)
 	{
-		a[i]=a[n-i];
+		temp=a[i];
+		a[i]=a[n-i-1];
+		a[n-i-1]=temp;
 	}
 	printf("reverse of entered array is");
 	for(i=0;i<n;i++)
 	{
 		printf("%d",a[i]);
 	}
+	getch();
 	return 0;
 	
 }
+
